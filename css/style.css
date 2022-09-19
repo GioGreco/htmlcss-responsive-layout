@@ -13,6 +13,10 @@
     --yellow: #fdc15f;
     --purple: #9792e4;
     --darkgrey: #333333;
+    --grey-text: #5a6e7f;
+    --btn-hover-purple: #ada7fb;
+    --btn-hover: rgba(251, 251, 251, 0.2);
+    --lightgrey-text: #c9c8f1;
 }
 
 .debug{
@@ -36,12 +40,102 @@ body{
     display: flex;
 }
 
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
 .justify-between{
     justify-content: space-between;
 }
 
 .align-center{
     align-items: center;
+}
+
+.btn-blue{
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 10px 40px;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    max-width: 225px;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-blue::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0%;
+    height: 0.1em;
+    background-color: var(--blue);
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out, width .5s ease-out;
+}
+
+.btn-blue:hover::after{
+    opacity: 1;
+    transform: translate(0, 0.4em);
+    width: 100%;
+}
+
+.btn-blue:hover{
+    background-color: var(--lightblue);
+    color: var(--blue)
+}
+
+.btn-purple{
+    background-color: var(--purple);
+    border-radius: 30px;
+    color: var(--white);
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.circle{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    margin: 0 auto;
+    color: var(--darkgrey);
+}
+
+.wide{
+    width: 45%;
+    padding: 15px 0;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+}
+
+.thin{
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.btn-purple:hover{
+    background-color: var(--btn-hover-purple);
+    color: var(--white);
+}
+
+.btn-white{
+    background-color: var(--white);
+    color: var(--purple);
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 auto;
+    width: 280px;
+    border-radius: 30px;
+    padding: 15px;
 }
 
 /* HEADER STYLE */
@@ -52,6 +146,7 @@ header{
     margin-bottom: 50px;
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
 .main-menu{
@@ -63,3 +158,312 @@ header a{
     color: var(--white);
     text-decoration: none;
 }
+
+
+/* MAIN STYLE */
+
+/* FIRST section */
+main section:nth-of-type(even){
+    background-color: var(--purple);
+}
+
+main #intro{
+    padding: 0 2rem;
+    color: var(--blue);
+    margin-bottom: 50px;
+}
+
+main #intro span{
+    color: var(--grey-text);
+    font-size: 18px;
+    line-height: 30px;
+}
+
+main #intro .cards .card{
+    border-radius: 25px;
+    padding: 2.5rem 2rem 0;
+    background-color: var(--lightblue);
+}
+
+main #intro .cards .card > *{
+    margin-bottom: 1rem;
+}
+
+main #intro .cards .card .phone-preview{
+    height: 270px;
+    margin-bottom: 0;
+}
+
+main #intro .cards .card .phone-preview img{
+    height: 100%;
+    padding: 0 10px;
+}
+
+main #intro .cards .card > i{
+    font-size: 80px;
+}
+
+main #intro .cards .card:not(:first-of-type) span{
+    text-align: center;
+}
+
+/* SECOND section */
+
+main #planning{
+    padding: 0 2rem;
+}
+
+main #planning .strategy{
+    color: var(--white);
+    padding-bottom: 30px;
+}
+
+main #planning .strategy img{
+    width: 100%;
+    padding: 100px 0;
+}
+
+main #planning .strategy h2{
+    font-size: 2rem;
+    padding-bottom: 50px;
+}
+
+main #planning .app-developement{
+    background-color: var(--white);
+    border-radius: 100px;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+main #planning .app-developement .wrapper{
+    padding: 30px;
+}
+
+main #planning .app-developement img{
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+main #planning .app-developement p{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding-bottom: 20px;
+}
+
+main #planning .app-developement span{
+    font-style: italic;
+    display: inline-block;
+    padding-bottom: 30px;
+}
+
+/* THIRD section */
+
+main #testimonials{
+    padding: 0 2rem;
+    text-align: center;
+}
+
+main #testimonials .testimonials-intro{
+    margin-top: 70px;
+}
+
+main #testimonials .testimonials-intro h4{
+    font-weight: 100;
+}
+
+main #testimonials .testimonials-intro h2{
+    color: var(--purple);
+    font-size: 2rem;
+    padding: 50px 0;
+}
+
+main #testimonials .testimonials-intro span{
+    color: var(--grey-text);
+}
+
+main #testimonials .testimonials-cards{
+    margin: 50px 0 100px;
+}
+
+main #testimonials .testimonials-cards .testimonial-card{
+    background-color: var(--purple);
+    color: var(--white);
+    border-radius: 50px;
+}
+
+main #testimonials .testimonials-cards .testimonial-card .wrapper{
+    padding: 25px 15px; 
+}
+
+main #testimonials .testimonials-cards .testimonial-card .wrapper > *{
+    margin-bottom: 20px;
+}
+
+main #testimonials .testimonials-cards .testimonial-card .testimonial-pic.one{
+    background-image: url("../img/testimonial1.jpg");
+}
+
+main #testimonials .testimonials-cards .testimonial-card .testimonial-pic.two{
+    background-image: url("../img/testimonial2.jpg");
+}
+
+main #testimonials .testimonials-cards .testimonial-card .testimonial-pic.three{
+    background-image: url('../img/testimonial3.jpg');
+}
+
+main #testimonials .testimonials-cards .testimonial-card .testimonial-pic{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+main #testimonials .testimonials-cards .testimonial-card i{
+    font-size: 1.5rem;
+}
+
+main #testimonials .testimonials-cards .testimonial-card .testimonial-name{
+    font-weight: bolder;
+}
+
+/* FOURTH section */
+main #features{
+    padding: 0 2rem;
+}
+
+#features .container{
+    padding: 75px 0;
+}
+
+main #features h2{
+    font-size: 2.5rem;
+    color: var(--white);
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+main #features .features-cards .feature-card{
+    background-color: var(--white);
+    padding: 25px 25px;
+    color: var(--purple);
+    border-radius: 50px;
+    margin-bottom: 30px;
+}
+
+main #features .features-cards .feature-card .feature-number{
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+main #features .features-cards .feature-card .feature-name{
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+main #features .features-cards .feature-card > *:not(:last-child){
+    margin-bottom: 25px;
+}
+
+main #features .features-cards .feature-card span{
+    color: var(--grey-text);
+    display: inline-block;
+}
+
+/* FIFTH section */
+
+#about-us{
+    padding: 0 2rem;
+}
+
+#about-us .container{
+    padding: 75px 0;
+}
+
+main #about-us .about-us-description h2{
+    font-size: 3rem;
+    color: var(--purple);
+}
+
+main #about-us .about-us-description span{
+    color: var(--black);
+    display: inline-block;
+    padding: 40px 0;
+}
+
+main #about-us .about-us-ceo .about-us-pic{
+    background-image: url('../img/about.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    position: relative;
+}
+
+main #about-us .about-us-ceo .about-us-pic i{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 4em;
+    color: var(--purple);
+}
+
+main #about-us .about-us-ceo p{
+    font-size: 2rem;
+    color: var(--purple);
+    font-weight: bolder;
+    padding: 20px 0;
+}
+
+/* SIXTH section */
+main #get-started{
+    padding: 0 2rem;
+    text-align: center;
+    color: var(--white);
+}
+
+main #get-started p{
+    color: var(--lightgrey-text);
+    font-weight: 200;
+}
+
+main #get-started h2{
+    font-size: 2rem;
+}
+
+main #get-started .free{
+    font-size: 3.5rem;
+    color: var(--yellow);
+    font-weight: bolder;
+}
+
+main #get-started span{
+    color: var(--lightgrey-text);
+}
+
+main #get-started a{
+    color: var(--lightgrey-text);
+}
+
+/* RESPONSIVE STYLE */
+
+/* @media screen and (min-width: 768px){
+    .container{
+        max-width: 750px;
+    }
+    #intro .cards{
+        display: flex;
+        flex-flow: row wrap;
+        margin-left: -0.75rem;
+        margin-right: -0.75rem;
+    }
+    #intro .cards .card{
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+        width: calc(33.33% - 1.5rem);
+    }
+    #intro .cards .card:first-child{
+        width: calc(66.66% - 1.5rem);
+    }
+} */
