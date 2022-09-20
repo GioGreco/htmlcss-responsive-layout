@@ -132,7 +132,7 @@ body{
     color: var(--purple);
     font-size: 1.5rem;
     text-align: center;
-    margin: 0 auto;
+    margin: 25px auto;
     width: 280px;
     border-radius: 30px;
     padding: 15px;
@@ -423,19 +423,26 @@ main #get-started{
     color: var(--white);
 }
 
+#get-started .container{
+    padding: 60px 0;
+}
+
 main #get-started p{
     color: var(--lightgrey-text);
     font-weight: 200;
+    padding-bottom: 25px;
 }
 
 main #get-started h2{
     font-size: 2rem;
+    padding-bottom: 60px;
 }
 
 main #get-started .free{
     font-size: 3.5rem;
     color: var(--yellow);
     font-weight: bolder;
+    padding-bottom: 60px;
 }
 
 main #get-started span{
@@ -445,6 +452,26 @@ main #get-started span{
 main #get-started a{
     color: var(--lightgrey-text);
 }
+
+/* FOOTER style */
+footer{
+    background-color: var(--darkgrey);
+    color: var(--lightgrey-text);
+    text-align: center;
+}
+
+footer .container{
+    padding: 40px 2rem;
+}
+
+footer div{
+    padding-top: 60px;
+}
+
+footer a{
+    color: var(--purple);
+}
+
 
 /* RESPONSIVE STYLE */
 
