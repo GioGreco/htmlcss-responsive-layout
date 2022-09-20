@@ -385,7 +385,6 @@ main #features .features-cards .feature-card span{
 }
 
 main #about-us .about-us-description .extra-large{
-    font-size: 3rem;
     color: var(--purple);
 }
 
@@ -393,6 +392,7 @@ main #about-us .about-us-description span{
     color: var(--black);
     display: inline-block;
     padding: 40px 0;
+    line-height: 40px;
 }
 
 main #about-us .about-us-ceo .about-us-pic{
@@ -414,7 +414,7 @@ main #about-us .about-us-ceo .about-us-pic i{
 
 main #about-us .about-us-ceo p{
     color: var(--purple);
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 /* SIXTH section */
@@ -503,5 +503,39 @@ footer a{
     #testimonials .testimonials-cards .testimonial-card .testimonial-quote{
         text-align: left;
         width: 70%;
+    }
+    /* media - tablet: FOURTH section */
+    #features .features-cards{
+        display: flex;
+        flex-flow: row wrap;
+    }
+    #features .features-cards .feature-card{
+        width: calc((100% - 3rem) / 2);
+        margin: 0 0.75rem;
+    }
+    #features .features-cards .feature-card .large{
+        font-size: 4rem;
+    }
+    /* media - tablet: FIFTH section */
+    #about-us .wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #about-us .about-us-description{
+        width: 50%;
+    }
+    #about-us .about-us-ceo{
+        width: 30%;
+    }
+    #about-us .about-us-description .extra-large{
+        font-size: 5rem;
+    }
+    /* media - tablet: SIXTH section */
+    #get-started .medium-large{
+        font-size: 3.5rem;
+    }
+    #get-started .giant{
+        font-size: 6rem;
     }
 }
