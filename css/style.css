@@ -58,6 +58,7 @@ body{
     background-color: var(--blue);
     color: var(--white);
     padding: 10px 40px;
+    margin-top: 1.5rem;
     text-align: center;
     border-radius: 30px;
     font-size: 18px;
@@ -221,8 +222,12 @@ main #intro .cards .card{
     background-color: var(--lightblue);
 }
 
-main #intro .cards .card > *{
-    margin-bottom: 1rem;
+main #intro .cards .card > div:first-of-type{
+    padding-bottom: 2.5rem;
+}
+
+main #intro .cards .card > div > *{
+    margin-bottom: 1.5rem;
 }
 
 main #intro .cards .card .phone-preview{
@@ -235,15 +240,19 @@ main #intro .cards .card .phone-preview img{
     padding: 0 10px;
 }
 
-main #intro .cards .card > i{
+main #intro .cards .card > div > i{
     font-size: 80px;
 }
 
-main #intro .cards .card:not(:first-of-type) span{
+main #intro .cards .card:not(:first-of-type){
     text-align: center;
 }
 
 /* SECOND section */
+main #planning .container{
+    padding-bottom: 50px;
+}
+
 main #planning .strategy{
     color: var(--white);
     padding-bottom: 30px;
@@ -260,7 +269,7 @@ main #planning .strategy .medium-large{
 
 main #planning .app-developement{
     background-color: var(--white);
-    border-radius: 100px;
+    border-radius: 50px;
     text-align: center;
     margin-bottom: 45px;
 }
@@ -471,7 +480,7 @@ footer a{
 
 /* RESPONSIVE STYLE */
 
-/* media - tablet style */
+/* MEDIA - TABLET style */
 @media screen and (min-width: 768px){
     .container{
         max-width: 750px;
@@ -523,7 +532,7 @@ footer a{
         justify-content: space-between;
     }
     #about-us .about-us-description{
-        width: 50%;
+        width: 60%;
     }
     #about-us .about-us-ceo{
         width: 30%;
@@ -537,5 +546,44 @@ footer a{
     }
     #get-started .giant{
         font-size: 6rem;
+    }
+}
+
+/* MEDIA - DESKTOP style */
+@media screen and (min-width: 992px){
+    .container{
+        max-width: 950px;
+    }
+    /* media - desktop: FIRST section */
+    #intro .cards .card{
+        flex-direction: row;
+    }
+    #intro .cards .card .phone-preview{
+        align-self: flex-end;
+    }
+    /* media - desktop: SECOND section */
+    #planning .container > .wrapper{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #planning .strategy, #planning .app-developement{
+        width: 45%;
+    }
+    #planning .app-developement{
+        align-self: flex-end;
+    }
+    #planning .strategy .medium-large{
+        font-size: 2rem;
+    }
+    /* media - desktop: THIRD section */
+    #testimonials .testimonials-intro .medium-large{
+        font-size: 3rem;
+    }
+    /* media - desktop: FOURTH section */
+    #features .features-cards .feature-card{
+        width: calc((100% - 4.5rem) / 3);
     }
 }
