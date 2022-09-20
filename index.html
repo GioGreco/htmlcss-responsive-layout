@@ -14,20 +14,30 @@
 <body>
     <!-- HEADER = logo + navbar (collapse on mobile / tablet) -->
     <header>
-        <div class="container d-flex justify-between align-center">
+        <div class="container flex-row justify-between align-center">
             <a href="#">
                 <img src="./img/logo.png" alt="Logo">
             </a>
-            <span>
+            <span class="hamburger">
                 <i class="fa-solid fa-bars"></i>
+                <div class="dropdown">
+                    <ul class="flex-column justify-between align-center small">
+                        <li><a href="#planning">Planning</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about-us">About Us</a></li>
+                        <li><a class="btn-white" href="#get-started">Get Started</a></li>
+                        <li><hr></li>
+                    </ul>
+                </div>
             </span>
             <nav class="main-menu">
-                <ul>
-                    <li><a href="#">link</a></li>
-                    <li><a href="#">link</a></li>
-                    <li><a href="#">link</a></li>
-                    <li><a href="#">link</a></li>
-                    <li><a href="#">link</a></li>
+                <ul class="flex-row justify-between small">
+                    <li><a href="#planning">Planning</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a class="btn-white" href="#get-started">Get Started</a></li>
                 </ul>
             </nav>
         </div>
@@ -115,7 +125,15 @@
                 <div class="testimonials-cards">
                     <div class="testimonial-card">
                         <div class="wrapper flex-column align-center">
-                            <div class="testimonial-pic one">
+                            <div class="testimonial-pic-wrapper">
+                                <div class="testimonial-pic-inner">
+                                    <div class="testimonial-pic one front-face"></div>
+                                    <div class="back-face">
+                                        <i class="fa-brands fa-facebook"></i>
+                                        <i class="fa-brands fa-instagram"></i>
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </div>
+                                </div>
                             </div>
                             <div class="testimonial-quote small">
                                 <i class="fa-solid fa-quote-left medium"></i>
@@ -127,7 +145,15 @@
                     </div>
                     <div class="testimonial-card">
                         <div class="wrapper flex-column align-center">
-                            <div class="testimonial-pic two">
+                            <div class="testimonial-pic-wrapper">
+                                <div class="testimonial-pic-inner">
+                                    <div class="testimonial-pic two front-face"></div>
+                                    <div class="back-face">
+                                        <i class="fa-brands fa-facebook"></i>
+                                        <i class="fa-brands fa-instagram"></i>
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </div>
+                                </div>
                             </div>
                             <div class="testimonial-quote small">
                                 <i class="fa-solid fa-quote-left medium"></i>
@@ -139,7 +165,15 @@
                     </div>
                     <div class="testimonial-card">
                         <div class="wrapper flex-column align-center">
-                            <div class="testimonial-pic three">
+                            <div class="testimonial-pic-wrapper">
+                                <div class="testimonial-pic-inner">
+                                    <div class="testimonial-pic three front-face"></div>
+                                    <div class="back-face">
+                                        <i class="fa-brands fa-facebook"></i>
+                                        <i class="fa-brands fa-instagram"></i>
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </div>
+                                </div>
                             </div>
                             <div class="testimonial-quote small">
                                 <i class="fa-solid fa-quote-left medium"></i>
@@ -225,7 +259,7 @@
                 <div class="medium-large heavy">Simple, Transparent Pricing</div>
                 <div class="free giant heavy">It's Free!</div>
                 <span>We're still in beta and will be for awhile. As we add more functionality, we'll look into other plans with more controls.</span>
-                <div class="btn-white">Get Started</div>
+                <div class="btn-white medium"><a href="#">Get Started</a></div>
                 <span>Copyright 2021 Boolean &bull; Classe 74 &bull; <a href="#">Privacy policy</a></span>
             </div>
         </section>

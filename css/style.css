@@ -17,6 +17,7 @@
     --btn-hover-purple: #ada7fb;
     --btn-hover: rgba(251, 251, 251, 0.2);
     --lightgrey-text: #c9c8f1;
+    --icon-hover: #c9c5f7;
 }
 
 .debug{
@@ -26,6 +27,10 @@
 
 
 /* GENERAL */
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: var(--white);
     font-family: 'PT Sans', sans-serif;
@@ -36,14 +41,15 @@ body{
     margin: 0 auto;
 }
 
-.d-flex{
-    display: flex;
-}
-
 .flex-column{
     display: flex;
     flex-direction: column;
     margin-bottom: 1.5rem;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
 }
 
 .justify-between{
@@ -130,13 +136,16 @@ body{
 
 .btn-white{
     background-color: var(--white);
-    color: var(--purple);
-    font-size: 1.5rem;
+    color: var(--black);
     text-align: center;
     margin: 25px auto;
     width: 280px;
     border-radius: 30px;
     padding: 15px;
+}
+
+.btn-white:hover{
+    color: var(--purple);
 }
 
 /* FONT CLASSES */
@@ -183,9 +192,14 @@ header{
     z-index: 1000;
 }
 
-.main-menu{
+header .main-menu{
     display: none;
     font-size: 1.5rem;
+}
+
+header .main-menu ul{
+    list-style: none;
+    width: 500px;
 }
 
 header a{
@@ -193,11 +207,55 @@ header a{
     text-decoration: none;
 }
 
+header a:hover{
+    text-decoration: underline;
+}
 
+header .hamburger{
+    position: relative;
+    align-self: stretch;
+    top: .5em;
+}
+
+header .hamburger .dropdown{
+    position: absolute;
+    top: 100%;
+    z-index: 500;
+    background-color: var(--blue);
+    width: 40vw;
+    height: 0vh;
+    right: -1em;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    opacity: 100%;
+    transition: height 1s ease-out;
+}
+
+header .hamburger .dropdown ul{
+    padding: 25px 0;
+    list-style: none;
+    height: 100%;
+    opacity: 0%;
+    transition: opacity .2s ease-out;
+}
+
+header .hamburger .dropdown ul li:last-of-type{
+    align-self: stretch;
+    padding: 0 50px;
+}
+
+header .hamburger i:active + .dropdown{
+    height: 60vh;
+}
+
+header .hamburger i:active + .dropdown ul{
+    opacity: 100%;
+    transition: opacity .2s ease;
+}
 /* MAIN STYLE */
 
 main #intro, main #planning, main #testimonials, main #features, main #about-us, main #get-started{
-    padding: 0 2rem;
+    padding: 76px 2rem;
 }
 
 /* FIRST section */
@@ -332,6 +390,55 @@ main #testimonials .testimonials-cards .testimonial-card .wrapper > *{
     margin-bottom: 20px;
 }
 
+main #testimonials .testimonials-cards .testimonial-card .testimonial-pic-wrapper{
+    cursor: pointer;
+}
+
+main #testimonials .testimonials-cards .testimonial-card .testimonial-pic-wrapper .testimonial-pic-inner{
+    position: relative;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in-out;
+}
+
+main #testimonials .testimonials-cards .testimonial-card .testimonial-pic-wrapper .testimonial-pic-inner .front-face{
+    backface-visibility: hidden;
+}
+
+main #testimonials .testimonials-cards .testimonial-card .testimonial-pic-wrapper .testimonial-pic-inner .back-face{
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--btn-hover-purple);
+    transform: rotateY(180deg);
+}
+
+
+main #testimonials .testimonials-cards .testimonial-card .testimonial-pic-wrapper .testimonial-pic-inner .back-face i{
+    background-color: var(--icon-hover);
+    margin: 0 10px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    line-height: 35px;
+    font-size: 20px;
+}
+
+main #testimonials .testimonials-cards .testimonial-card .testimonial-pic-wrapper .testimonial-pic-inner .back-face i:hover{
+    color: var(--purple);
+}
+
+main #testimonials .testimonials-cards .testimonial-card .testimonial-pic-wrapper:hover .testimonial-pic-inner{
+    transform: rotateY(-180deg);
+}
+
 main #testimonials .testimonials-cards .testimonial-card .testimonial-pic.one{
     background-image: url("../img/testimonial1.jpg");
 }
@@ -450,13 +557,20 @@ main #get-started .free{
     padding-bottom: 60px;
 }
 
-main #get-started span{
+main #get-started span a{
     color: var(--lightgrey-text);
 }
 
-main #get-started a{
-    color: var(--lightgrey-text);
+main #get-started .btn-white a{
+    text-decoration: none;
+    color: var(--black);
 }
+
+main #get-started .btn-white:hover a{
+    text-decoration: underline;
+    color: var(--purple);
+}
+
 
 /* FOOTER style */
 footer{
@@ -553,6 +667,12 @@ footer a{
 @media screen and (min-width: 992px){
     .container{
         max-width: 950px;
+    }
+    header .hamburger{
+        display: none;
+    }
+    header .main-menu{
+        display: block;
     }
     /* media - desktop: FIRST section */
     #intro .cards .card{
