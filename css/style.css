@@ -20,12 +20,6 @@
     --icon-hover: #c9c5f7;
 }
 
-.debug{
-    border: 1px solid red;
-    min-height: 50px;
-}
-
-
 /* GENERAL */
 html{
     scroll-behavior: smooth;
@@ -192,14 +186,51 @@ header{
     z-index: 1000;
 }
 
+
+/* AREA PROVA - AREA PROVA - AREA PROVA - AREA PROVA - AREA PROVA - AREA PROVA */
+
+/* header .container{
+    position: relative;
+}
+
 header .main-menu{
-    display: none;
-    font-size: 1.5rem;
+    position: absolute;
+    top: calc(100% + 1rem);
+    right: -.5em;
+    height: 0;
+    width: 50vw;
+    background-color: var(--blue);
+    padding: 25px 0;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    opacity: 0%;
+    transition: height 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 header .main-menu ul{
     list-style: none;
-    width: 500px;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0%;
+    transition: opacity 1s ease-in-out;
+}
+
+header .hamburger:hover + .main-menu{
+    height: 60vh;
+    opacity: 100%;
+}
+
+header .hamburger:hover + .main-menu ul{
+    opacity: 100%;
+} */
+
+/* AREA PROVA - AREA PROVA - AREA PROVA - AREA PROVA - AREA PROVA - AREA PROVA */
+
+header .main-menu{
+    display: none;
+    font-size: 1.5rem;
 }
 
 header a{
@@ -600,8 +631,13 @@ footer a{
         max-width: 750px;
     }
     header .hamburger .dropdown{
-        width: 80vh;
+        width: 50vw;
     }
+
+    /* header .main-menu{
+        width: 50vw;
+    } */
+
     /* media - tablet: FIRST section */
     #intro .cards{
         display: flex;
@@ -677,6 +713,25 @@ footer a{
     header .main-menu{
         display: block;
     }
+    header .main-menu ul{
+        list-style: none;
+        width: 500px;
+    }
+    /* AREA PROVA - AREA PROVA - AREA PROVA */
+    /* header .main-menu{
+        top: 0;
+        right: 0;
+        height: 100%;
+        padding: 0;
+        opacity: 100%;
+    }
+    header .main-menu ul{
+        flex-direction: row;
+        width: 500px;
+        opacity: 100%;
+        float: right;
+    } */
+    /* AREA PROVA - AREA PROVA - AREA PROVA */
     /* media - desktop: FIRST section */
     #intro .cards .card{
         flex-direction: row;
